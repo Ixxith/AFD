@@ -18,7 +18,9 @@ app.get('/login', (req, res) => {
   res.render('../views/loggedin');
 });
 
-
+app.get('/api', (req, res) => {
+  res.render('../views/api');
+});
 
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
