@@ -246,15 +246,23 @@ section {
 .team-card {
   border-color: var(--brand);
   background-color: var(--brand);
-  border-radius: 2em;
   color: #fff;
   align-items: center;
+  justify-content: center;
+  height: 200px;
+  overflow: hidden;
+  margin: 10px;
 }
 
 .team-card:hover {
   transform: scale(1.03);
   transition: all .5s ease-in-out;
   opacity: 90%;
+}
+
+.team-pic {
+  width: 200px;
+  padding: 0;
 }
 
 .service {
