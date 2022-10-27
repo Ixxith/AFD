@@ -22,6 +22,9 @@ app.get('/about', (req, res) => {
   res.render('../views/about');
 });
 
+app.get('/api', (req, res) => {
+  res.render('../views/api');
+});
 
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
