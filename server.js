@@ -18,6 +18,10 @@ app.get('/login', (req, res) => {
   res.render('../views/loggedin');
 });
 
+app.get('/about', (req, res) => {
+  res.render('../views/about');
+});
+
 app.get('/api', (req, res) => {
   res.render('../views/api');
 });
