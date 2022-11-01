@@ -11,7 +11,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/signup', (req, res) => {
-  res.render('../views/signup');
+  res.render('../views/signup', {"redirect" : ""});
+});
+
+app.get('/signup/:redirect', (req, res) => {
+  res.render('../views/signup', req.params);
 });
 
 app.get('/login', (req, res) => {
@@ -24,6 +28,11 @@ app.get('/about', (req, res) => {
 
 app.get('/api', (req, res) => {
   res.render('../views/api');
+});
+
+
+app.get('/dashboard', (req, res) => {
+  res.render('../views/dashboard');
 });
 
 app.listen(port, () => {
