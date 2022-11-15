@@ -30,6 +30,11 @@ app.get('/api', (req, res) => {
   res.render('../views/api');
 });
 
+app.get('/upload', (req, res) => {
+  res.render('../views/upload');
+});
+
+
 
 app.get('/dashboard', (req, res) => {
   res.render('../views/dashboard');
