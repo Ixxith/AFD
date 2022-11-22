@@ -1,9 +1,13 @@
 const express = require('express');
+
 let ejs = require('ejs');
 const app = express();
 const port = process.env.PORT || 443;
-app.set('view engine', 'ejs');
+
 app.use(express.static('public'))
+
+
+app.set('view engine', 'ejs');
 
 
 app.get('/', (req, res) => {
@@ -32,6 +36,10 @@ app.get('/api', (req, res) => {
 
 app.get('/upload', (req, res) => {
   res.render('../views/upload');
+});
+
+app.get('/task', (req, res) => {
+  res.render('../views/task');
 });
 
 

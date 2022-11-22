@@ -137,7 +137,7 @@
 
     </style>
 
-    <title>AFD - Home</title>
+    <title>AFD - Upload</title>
 
     <script>
         const words = [
@@ -476,42 +476,7 @@ function generateWords(length = 10) {
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
-  <!-- NAV -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="/"><img src="https://cdn.glitch.global/27304cb3-6c3d-4ef6-9b04-66edbe33799b/afd.png?v=1666636411820"/><span class="dot"></span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="ms-auto align-middle">
-              
-                Welcome User123
-                            
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                     
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>       
-                     <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/api">API</a>
-                    </li> 
-                </ul>
-                <a href="/" class="btn btn-brand ms-lg-3">Logout</a>
-            </div>
-        </div>
-    </nav>
+    <%- include('../partials/headerloggedin.ejs') %>
 
     <!-- SLIDER -->
     
@@ -596,37 +561,7 @@ function generateWords(length = 10) {
     </div>
   
     <!-- FOOTER -->
-    <footer class="">
-        <div class="footer-top text-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <h4 class="text-white">Audio Fraud Detection</h4>                                             
-                        <div class="col-auto conditions-section">
-                            <a href="/about">about</a>
-                            <a href="#">terms</a>
-                            <a href="#">disclaimer</i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom text-center">
-            
-            <p class="mb-0">Copyright AFD 2022. All rights Reserved</p>  
-            <a class="text-white" href="https://www.flaticon.com/free-icons/" title="phone icons">Icons created by Freepik, Andrejs Kirma, Smashicons - Flaticon</a>
-            
-        </div>
-    </footer>
-
-
-
-
-
-
-
-
-
+    <%- include('../partials/footerloggedin.ejs') %>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

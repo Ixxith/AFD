@@ -24,51 +24,7 @@
   
 
     <!-- NAV -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="/"><img src="https://cdn.glitch.global/27304cb3-6c3d-4ef6-9b04-66edbe33799b/afd.png?v=1666636411820"/><span class="dot"></span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                     
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li> 
-                    <li class="nav-item">
-                      <a class="nav-link" href="/signup/dashboard">Dashboard</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/signup/api">API</a>
-                  </li>                          
-                </ul>
-                <a href="#" 
-                    class="btn btn-brand ms-lg-3">Sign up</a>
-                <% if (redirect==="api") { %> 
-                      
-                        <a href="/api" class="btn btn-brand ms-lg-3">Login</a>
-                          
-                    <% } else if (redirect==="dashboard") { %>
-                      
-                        <a href="/dashboard" class="btn btn-brand ms-lg-3">Login</a>
-                      
-                    <% } else { %>
-                      
-                        <a href="/login" class="btn btn-brand ms-lg-3">Login</a>
-                      
-                    <% } %>
-                    
-            </div>
-        </div>
-    </nav>
+    <%- include('../partials/header.ejs') %>
 
   <!-- SIGN UP -->
    <section class="h-100" style="background-color: #eee;">
@@ -176,28 +132,7 @@
   </div>
 </section>
    
-    <footer>
-        <div class="footer-top text-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <h4 class="text-white">Audio Fraud Detection</h4>                                             
-                        <div class="col-auto conditions-section">
-                            <a href="/about">about</a>
-                            <a href="#">terms</a>
-                            <a href="#">disclaimer</i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom text-center">
-            
-            <p class="mb-0">Copyright AFD 2022. All rights Reserved</p>  
-            <a class="text-white" href="https://www.flaticon.com/free-icons/" title="phone icons">Icons created by Freepik, Andrejs Kirma, Smashicons - Flaticon</a>
-            
-        </div>
-    </footer>
+<%- include('../partials/footer.ejs') %>
 
 
     <!-- Modal -->
