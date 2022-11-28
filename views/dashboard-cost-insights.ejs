@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AFD - Dashboard</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.global/27304cb3-6c3d-4ef6-9b04-66edbe33799b/favicon.ico">
+    <!-- Custom Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!-- Header -->
+        <%- include('../partials/dashboard-header.ejs') %>
+
+        <!-- SIDEBAR -->
+        <%- include('../partials/dashboard-sidebar.ejs') %>
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            
+            <!-- row -->
+            <!-- <div class="row">
+                <div class="row page-titles mx-0">
+                    <div class="col p-md-0">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="container-fluid">
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Usage Costs</h4>
+                            <div id="morris-area-chart"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4>Cost Breakdown</h4>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <!-- <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Status</th>
+                                            <th>Date</th>
+                                            <th>Price</th>
+                                        </tr>
+                                    </thead> -->
+                                    <tbody>
+                                        <tr>
+                                            <th>1</th>
+                                            <td>Price Per API Call</td>
+                                            <td>
+                                                <!-- <span class="badge badge-primary px-2">Planned</span> -->
+                                            </td>
+                                            <td></td>
+                                            <td class="color-primary">$.50</td>
+                                        </tr>
+                                        <tr>
+                                            <th>2</th>
+                                            <td>Training Sets</td>
+                                            <td>
+                                                <!-- <span class="badge badge-danger px-2">Tax</span> -->
+                                            </td>
+                                            <td></td>
+                                            <td class="color-success">$1000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td>Increased Accuracy</td>
+                                            <td>
+                                                <!-- <span class="badge badge-success px-2">Extended</span> -->
+                                            </td>
+                                            <td></td>
+                                            <td class="color-danger">$15.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>3</th>
+                                            <td>New User Orientation</td>
+                                            <td>
+                                                <!-- <span class="badge badge-success px-2">Extended</span> -->
+                                            </td>
+                                            <td></td>
+                                            <td class="color-danger">$70.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Budget</h4>
+                            <div id="morris-donut-chart"></div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+                </div>
+            </div>
+            
+            
+            <!-- FIXME later, couldn't figure out how to disable background script -->
+            <div class="container-fluid" id="element">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Visit Chart</h4>
+                                <div id="morris-area-chart0"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Area Chart</h4>
+                                <div id="extra-area-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Line Chart</h4>
+                                <div id="morris-line-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Line Chart</h4>
+                                <div id="morris-area-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Bar Chart</h4>
+                                <div id="morris-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!-- SIDEBAR -->
+        <%- include('../partials/dashboard-footer.ejs') %>
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <script src="plugins/raphael/raphael.min.js"></script>
+    <script src="plugins/morris/morris.min.js"></script>
+    <script src="js/plugins-init/morris-init.js"></script>
+
+    <script>
+        document.getElementById("element").style.display = "none";
+    </script>
+
+</body>
+
+</html>

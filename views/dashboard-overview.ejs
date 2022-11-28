@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <!-- theme meta -->
+    <meta name="theme-name" content="quixlab" />
+  
+    <title>AFD - Dashboard</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.global/27304cb3-6c3d-4ef6-9b04-66edbe33799b/favicon.ico">
+    <!-- Pignose Calender -->
+    <link type="text/css" href="plugins/pg-calendar/css/pignose.calendar.min.css" >
+    <!-- Chartist -->
+    <link rel="stylesheet" href="plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <!-- <link type="text/css" href="dashboard/css/style.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+    
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!-- Header -->
+        <%- include('../partials/dashboard-header.ejs') %>
+
+        <!-- SIDEBAR -->
+        <%- include('../partials/dashboard-sidebar.ejs') %>
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <!-- SECTION API Request Counter -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-1">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">API Requests</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white">449</h2>
+                                    <!-- <p class="text-white mb-0">January 1st, 2020</p> -->
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-cloud-upload"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SECTION Fraud detected counter -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-2">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">High</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white">102</h2>
+                                    <!-- <p class="text-white mb-0">January 1st, 2022</p> -->
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-exclamation-triangle"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SECTION Average response time  -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-3">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Response Time</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white">3m</h2>
+                                    <!-- <p class="text-white mb-0">Jan - March 2019</p> -->
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-clock-o"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SECTION Percentage Accurate -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-4">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Accuracy</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white">73%</h2>
+                                    <!-- <p class="text-white mb-0">Jan - March 2019</p> -->
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-percent"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body pb-0 d-flex justify-content-between">
+                                        <div>
+                                            <h4 class="mb-1">Today's Fraud Trends</h4>
+                                            <!-- <p>Total Earnings of the Month</p>
+                                            <h3 class="m-0">$ 12,555</h3> -->
+                                        </div>
+                                        <div>
+                                            <ul>
+                                                <li class="d-inline-block mr-3"><a class="text-dark" href="#">Day</a></li>
+                                                <li class="d-inline-block mr-3"><a class="text-dark" href="#">Week</a></li>
+                                                <li class="d-inline-block"><a class="text-dark" href="#">Month</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- NOTE Chart references data in dashboard-1.js -->
+                                    <div class="chart-wrapper">
+                                        <canvas id="chart_widget_2"></canvas>
+                                    </div>
+                                    <!-- NOTE Bars below the chart -->
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="w-100 mr-2">
+                                                <h6>Yesterday</h6>
+                                                <div class="progress" style="height: 6px">
+                                                    <div class="progress-bar bg-danger" style="width: 40%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-2 w-100">
+                                                <h6>Today</h6>
+                                                <div class="progress" style="height: 6px">
+                                                    <div class="progress-bar bg-primary" style="width: 80%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="active-member">
+                                    <div class="table-responsive">
+                                        <table class="table table-xs mb-0">
+                                            <h4>Agent Outliers</h4>
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>ID</th>
+                                                    <th>Country</th>
+                                                    <th>Overall Calls</th>
+                                                    <th>Fraud</th>
+                                                    <th>Last Activity</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><img src="./images/avatar/1.jpg" class=" rounded-circle mr-3" alt="">Sarah Smith</td>
+                                                    <td>013379</td>
+                                                    <td>
+                                                        <span>United States</span>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="progress" style="height: 6px">
+                                                                <div class="progress-bar bg-success" style="width: 20%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Low</td>
+                                                    <td>
+                                                        <span>Call Scanned</span>
+                                                        <span class="m-0 pl-3">10 sec ago</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="./images/avatar/2.jpg" class=" rounded-circle mr-3" alt="">Walter R.</td>
+                                                    <td>587816</td>
+                                                    <td><span>Canada</span></td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="progress" style="height: 6px">
+                                                                <div class="progress-bar bg-success" style="width: 30%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Low</td>
+                                                    <td>
+                                                        <span>Call Scanned</span>
+                                                        <span class="m-0 pl-3">50 sec ago</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="./images/avatar/3.jpg" class=" rounded-circle mr-3" alt="">Andrew D.</td>
+                                                    <td>539538</td>
+                                                    <td><span>Germany</span></td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="progress" style="height: 6px">
+                                                                <div class="progress-bar bg-danger" style="width: 80%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><i class="fa fa-circle-o text-danger  mr-2"></i>High</td>
+                                                    <td>
+                                                        <span>Call Scanned</span>
+                                                        <span class="m-0 pl-3">10 sec ago</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="./images/avatar/6.jpg" class=" rounded-circle mr-3" alt=""> Megan S.</td>
+                                                    <td>679096</td>
+                                                    <td><span>Japan</span></td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="progress" style="height: 6px">
+                                                                <div class="progress-bar bg-success" style="width: 10%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Low</td>
+                                                    <td>
+                                                        <span>Call Scanned</span>
+                                                        <span class="m-0 pl-3">10 sec ago</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="./images/avatar/4.jpg" class=" rounded-circle mr-3" alt=""> Doris R.</td>
+                                                    <td>966793</td>
+                                                    <td><span>England</span></td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="progress" style="height: 6px">
+                                                                <div class="progress-bar bg-success" style="width: 15%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><i class="fa fa-circle-o text-success  mr-2"></i> Low</td>
+                                                    <td>
+                                                        <span>Call Scanned</span>
+                                                        <span class="m-0 pl-3">10 sec ago</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="./images/avatar/5.jpg" class=" rounded-circle mr-3" alt="">Elizabeth W.</td>
+                                                    <td>089201</td>
+                                                    <td><span>China</span></td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="progress" style="height: 6px">
+                                                                <div class="progress-bar bg-danger" style="width: 80%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><i class="fa fa-circle-o text-danger  mr-2"></i>High</td>
+                                                    <td>
+                                                        <span>Call Scanned</span>
+                                                        <span class="m-0 pl-3">10 sec ago</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+        <!-- FOOTER
+        <%- include('../partials/footer.ejs') %> -->
+        
+        
+        <!-- SIDEBAR -->
+        <%- include('../partials/dashboard-footer.ejs') %>
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <!-- Chartjs -->
+    <script src="plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="plugins/d3v3/index.js"></script>
+    <script src="plugins/topojson/topojson.min.js"></script>
+    <script src="plugins/datamaps/datamaps.world.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="plugins/raphael/raphael.min.js"></script>
+    <script src="plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="plugins/chartist/js/chartist.min.js"></script>
+    <script src="plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+
+
+    <script src="js/dashboard/dashboard-1.js"></script>
+
+</body>
+
+</html>

@@ -43,10 +43,28 @@ app.get('/task', (req, res) => {
 });
 
 
-
+// Dashboard Views
 app.get('/dashboard', (req, res) => {
-  res.render('../views/dashboard');
+  res.render('../views/dashboard-overview');
 });
+
+app.get('/dashboard/overview', (req, res) => {
+  res.render('../views/dashboard-overview');
+});
+
+app.get('/dashboard/recordings', (req, res) => {
+  res.render('../views/dashboard-recordings');
+});
+
+app.get('/dashboard/cost-insights', (req, res) => {
+  res.render('../views/dashboard-cost-insights');
+});
+
+app.get('/dashboard/users', (req, res) => {
+  res.render('../views/dashboard-users');
+});
+
+
 
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
